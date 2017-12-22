@@ -553,6 +553,12 @@ public class ColorPickerView extends View {
   }
 
   @Override public boolean onTouchEvent(MotionEvent event) {
+  
+    try{
+      this.getParent().requestDisallowInterceptTouchEvent( true );
+    }catch(Throwable ignored){
+    }
+    
     boolean update = false;
 
     switch (event.getAction()) {
